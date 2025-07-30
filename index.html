@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Air Compressors - Quality Air Compressors for Every Need</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-container">
+                        <img src="tag.jpg" alt="Aditya Air Compressors Logo" class="company-logo">
+                        <div class="logo-text">
+                            <h1>Aditya Air Compressors</h1>
+                            <span class="tagline">Quality Air Compressors for Every Need</span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="javascript:void(0)" onclick="showPage('home')" class="nav-link active">Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')" class="nav-link">Products</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('badges-certificates')" class="nav-link">Badges/Certificates</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('about')" class="nav-link">About</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('contact')" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <div id="homePage" class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">Quality Air Compressors for Every Need</h1>
+                            <p class="hero-subtitle">Premium industrial air compressors with reliable performance and superior durability</p>
+                            <div class="hero-badges">
+                                <img src="badge.jpg" alt="Quality Warranty Badge" class="warranty-badge">
+                            </div>
+                            <button class="btn btn--primary btn--lg hero-cta" onclick="showPage('products')">Shop Now</button>
+                        </div>
+                        <div class="hero-image">
+                            <img src="15HP.jpg" alt="15HP Air Compressor" class="hero-product-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="featured-products">
+                <div class="container">
+                    <h2 class="section-title">Featured Products</h2>
+                    <div class="products-grid" id="featuredGrid">
+                        <!-- Featured products will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quality Assurance -->
+            <section class="quality-section">
+                <div class="container">
+                    <div class="quality-content">
+                        <div class="quality-text">
+                            <h2>Our Quality Promise</h2>
+                            <p>Every Aditya air compressor comes with our quality assurance guarantee. We use only the finest materials and components to ensure long-lasting performance.</p>
+                        </div>
+                        <div class="quality-badge">
+                            <img src="badge.jpg" alt="Quality Warranty Badge" class="large-badge">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="why-choose-us">
+                <div class="container">
+                    <h2 class="section-title">Why Choose Aditya Air Compressors</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-award feature-icon"></i>
+                            <h3>Premium Quality</h3>
+                            <p>High-quality air compressors built to last with superior performance and reliability</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-tools feature-icon"></i>
+                            <h3>Expert Service</h3>
+                            <p>Professional installation and maintenance services by certified technicians</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shipping-fast feature-icon"></i>
+                            <h3>Fast Delivery</h3>
+                            <p>Quick delivery across India with secure packaging and handling</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-headset feature-icon"></i>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock customer support for all your queries and concerns</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Products Page -->
+        <div id="productsPage" class="page hidden">
+            <div class="container">
+                <div class="products-layout">
+                    <aside class="sidebar">
+                        <h3>Filters</h3>
+                        <div class="filter-group">
+                            <h4>Category</h4>
+                            <div class="filter-options" id="categoryFilters">
+                                <label><input type="checkbox" value="Industrial"> Industrial</label>
+                                <label><input type="checkbox" value="Heavy Industrial"> Heavy Industrial</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>HP Range</h4>
+                            <div class="filter-options" id="hpFilters">
+                                <label><input type="checkbox" value="0-10"> 0-10 HP</label>
+                                <label><input type="checkbox" value="10-20"> 10-20 HP</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-range">
+                                <input type="range" id="priceRange" min="0" max="150000" value="150000">
+                                <div class="price-display">
+                                    <span>₹0 - ₹<span id="priceValue">150000</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--secondary btn--full-width" id="clearFilters">Clear Filters</button>
+                    </aside>
+                    <main class="products-main">
+                        <div class="products-header">
+                            <h2>Our Products</h2>
+                            <div class="products-sort">
+                                <select id="sortSelect">
+                                    <option value="name">Sort by Name</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="hp">HP Rating</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products will be populated here -->
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges/Certificates Page -->
+        <div id="badges-certificatesPage" class="page hidden">
+            <div class="container">
+                <div class="badges-certificates-header">
+                    <h2>Our Badges & Certificates</h2>
+                    <p class="section-subtitle">We are committed to quality and excellence in air compressor manufacturing and service.</p>
+                </div>
+                <div class="badges-certificates-content">
+                    <div class="certificate-item">
+                        <div class="certificate-image">
+                            <img src="certificate.jpg" alt="Maintenance Certificate" class="certificate-img">
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Maintenance Certificate</h3>
+                            <p>Official maintenance guidelines and service protocols</p>
+                            <div class="certificate-details">
+                                <div class="maintenance-guidelines">
+                                    <h4>Daily Maintenance:</h4>
+                                    <ul>
+                                        <li>Clean the compressors daily</li>
+                                        <li>Drain out water from the air receiver tank daily</li>
+                                    </ul>
+                                    <h4>Weekly Maintenance:</h4>
+                                    <ul>
+                                        <li>Clean the air filter element once a week</li>
+                                    </ul>
+                                    <h4>Monthly Maintenance:</h4>
+                                    <ul>
+                                        <li>Change the oil every month</li>
+                                        <li>Change the air filter element after every 1 month (under normal conditions)</li>
+                                    </ul>
+                                    <p class="service-note"><strong>Note:</strong> Contact us for all kind of compressor repairing, servicing & maintenance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="certificate-image">
+                            <img src="badge.jpg" alt="Quality Badge" class="certificate-img">
+                        </div>
+                        <div class="certificate-info">
+                            <h3>Quality Badge</h3>
+                            <p>Certification of quality standards and manufacturing excellence</p>
+                            <div class="quality-assurance">
+                                <h4>Quality Standards:</h4>
+                                <ul>
+                                    <li>Premium grade materials and components</li>
+                                    <li>Rigorous quality testing procedures</li>
+                                    <li>ISO certified manufacturing processes</li>
+                                    <li>Comprehensive warranty support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail Page -->
+        <div id="productDetailPage" class="page hidden">
+            <div class="container">
+                <div class="product-detail" id="productDetail">
+                    <!-- Product detail content will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cartPage" class="page hidden">
+            <div class="container">
+                <h2>Shopping Cart</h2>
+                <div class="cart-content">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be populated here -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="cart-total">
+                            <h3>Order Summary</h3>
+                            <div class="total-line">
+                                <span>Subtotal:</span>
+                                <span id="cartSubtotal">₹0</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Tax (18%):</span>
+                                <span id="cartTax">₹0</span>
+                            </div>
+                            <div class="total-line total-final">
+                                <span>Total:</span>
+                                <span id="cartTotal">₹0</span>
+                            </div>
+                            <button class="btn btn--primary btn--full-width" id="checkoutBtn">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="aboutPage" class="page hidden">
+            <div class="container">
+                <div class="about-header">
+                    <h2>About Aditya Air Compressors</h2>
+                    <img src="badge.jpg" alt="Quality Badge" class="page-badge">
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Aditya Air Compressors is a leading manufacturer and supplier of high-quality air compressors in India. With years of experience in the industry, we provide reliable, efficient, and durable air compression solutions for various industrial applications.</p>
+                        <p>Our commitment to excellence and customer satisfaction has made us a trusted name in the industry. We specialize in reciprocating air compressors ranging from 5HP to 15HP, suitable for small to large industrial operations.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>To provide reliable, efficient, and cost-effective compressed air solutions that power industries and businesses across India.</p>
+                        
+                        <h3>Our Vision</h3>
+                        <p>To be the most trusted partner for all compressed air needs, driving innovation and sustainability in industrial solutions.</p>
+                        
+                        <h3>Quality Assurance</h3>
+                        <p>Every product undergoes rigorous quality testing to ensure optimal performance and longevity. Our warranty and service support demonstrate our confidence in our products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactPage" class="page hidden">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>A-1, KHASRA NO. 56/4, POCKET-D, HASTSAL INDUSTRIAL AREA UTTAM NAGAR, NEW DELHI - 110059</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 93120 66550<br>+91 98999 92004</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>adityaaircompressor@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Ghaziabad, Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Your Phone">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Page -->
+        <div id="successPage" class="page hidden">
+            <div class="container">
+                <div class="success-content">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h2>Order Placed Successfully!</h2>
+                    <p>Thank you for your order. We will contact you shortly to confirm the details.</p>
+                    <button class="btn btn--primary" onclick="showPage('home')">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Aditya Air Compressors</h4>
+                    <p>Quality Air Compressors for Every Need</p>
+                    <img src="badge.jpg" alt="Quality Badge" class="footer-badge">
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showPage('home')">Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')">Products</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('badges-certificates')">Badges/Certificates</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')">5HP Air Compressor</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')">10HP Air Compressor</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')">15HP Air Compressor</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('products')">Industrial Compressors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Ghaziabad, Uttar Pradesh, India</p>
+                        <p><i class="fas fa-phone"></i> +91 93120 66550</p>
+                        <p><i class="fas fa-envelope"></i> adityaaircompressor@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aditya Air Compressors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Checkout</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="checkout-total">
+                        <h4>Total: <span id="checkoutTotal">₹0</span></h4>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
